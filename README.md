@@ -78,5 +78,6 @@ in addition to the weights and bias.
 * http://www-isl.stanford.edu/~widrow/papers/c1997nonlinearadaptive.pdf
 * http://mocha-java.uccs.edu/dossier/RESEARCH/1998thesis-.pdf
 * http://cdmd.cnki.com.cn/Article/CDMD-10005-2004082362.htm
-
+* http://xueshu.baidu.com/s?wd=paperuri%3A%289e7f62257b124a98b73f6cfdf1a86bb2%29&filter=sc_long_sign&tn=SE_xueshusource_2kduw22v&sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-904291125.html&ie=utf-8&sc_us=18076168798136707397
+* http://xueshu.baidu.com/s?wd=paperuri%3A%289e7f62257b124a98b73f6cfdf1a86bb2%29&filter=sc_long_sign&tn=SE_xueshusource_2kduw22v&sc_vurl=http%3A%2F%2Fd.wanfangdata.com.cn%2FThesis%2FY612820&ie=utf-8&sc_us=18076168798136707397
 
