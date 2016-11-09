@@ -4,7 +4,7 @@ This is a NARX adptive inverse modeller and controller implemented by SISO NARX 
 
 基于NARX模型的自适应建模和控制，用一个MLP实现SISO NARX，能带耦合输入。
 
-##SMLP definition, SMLP定义
+##SMLP definition(SMLP定义)
 
 ```scala
 case class SMLP(var XinNum:Int=2, var YfbNum:Int=0,var hiddenNum:Int=5, var coupleNum:Int=0, var coupleInNum:Int=0,var MUinNum:Int=0,var MYfbNum:Int=0)
