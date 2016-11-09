@@ -1,4 +1,4 @@
-# ScalaMLT [![Build Status]
+# ScalaMLT
 
 This is a NARX adptive inverse modeller and controller implemented by SISO NARX with couple inputs and one MLP network.
 
@@ -70,13 +70,13 @@ object SMLPDemo extends App {
 }
 ```
 
-In this project, a sliding mode(VSC) added to ragulate the learning rate and improve the learning speed by tuning the active function's parameters 
+* In this project, a sliding mode(VSC) added to ragulate the learning rate and improve the learning speed by tuning the active function's parameters 
 in addition to the weights and bias. 
-本工程加入了滑模变结构控制调整学习率，一起调整激活函数的参数以及权系数和偏置提高了学习速度。
+* 本工程加入了滑模变结构控制调整学习率，一起调整激活函数的参数以及权系数和偏置提高了学习速度。
 
-##Paper, 文献：
-http://www-isl.stanford.edu/~widrow/papers/c1997nonlinearadaptive.pdf
-http://mocha-java.uccs.edu/dossier/RESEARCH/1998thesis-.pdf
-http://cdmd.cnki.com.cn/Article/CDMD-10005-2004082362.htm
+##Paper(文献)：
+* http://www-isl.stanford.edu/~widrow/papers/c1997nonlinearadaptive.pdf
+* http://mocha-java.uccs.edu/dossier/RESEARCH/1998thesis-.pdf
+* http://cdmd.cnki.com.cn/Article/CDMD-10005-2004082362.htm
 
 
