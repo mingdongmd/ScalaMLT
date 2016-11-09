@@ -72,7 +72,7 @@ object SMLPDemo extends App {
 
 * In this project, a sliding mode(VSC) added to ragulate the learning rate and improve the learning speed by tuning the active function's parameters 
 in addition to the weights and bias. 
-* 本工程加入了滑模变结构控制调整学习率，一起调整激活函数的参数以及权系数和偏置提高了学习速度。
+* 本工程加入了滑模变结构控制调整学习率。同时调整激活函数的参数以及权系数和偏置，提高了学习速度。
 
 ##Paper(文献)：
 * http://www-isl.stanford.edu/~widrow/papers/c1997nonlinearadaptive.pdf
