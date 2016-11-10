@@ -78,7 +78,7 @@ in addition to the weights and bias.
 
 
 ###Build and run(创建和运行)
-
+```bash
 >sbt
 > package
 [info] Updating {file:/D:/workplace/scala/ScalaMLT/}root...
@@ -102,7 +102,7 @@ Multiple main classes detected, select one to run:
 Enter number: 1
 
 [info] Running scala.ml.supervised.nnet.SMLPDemo
-
+```
 
 ##Paper(文献)：
 
