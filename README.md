@@ -4,6 +4,7 @@ This is a NARX adptive inverse modeller and controller implemented by SISO NARX 
 
 基于NARX模型的自适应建模和控制，用一个MLP实现SISO NARX，能带耦合输入。
 
+
 ##SMLP definition(SMLP定义)
 
 ```scala
@@ -16,6 +17,7 @@ coupleInNum Int=0, order of the couple. Default:0.
 MUinNum Int=0, control input u(t) order of the NARX model for this inverse NARX Controller. Default:0.
 MYfbNum Int=0, the feedback y(t) order of the NARX model for this inverse NARX Controller. Default:0.
 ```
+
 
 ###Usage(用法)(in SMLPDemo.scala and SMLPInverseDemo.scala)：
 
@@ -74,10 +76,40 @@ object SMLPDemo extends App {
 in addition to the weights and bias. 
 * 本工程加入了滑模变结构控制调整学习率。同时调整激活函数的参数以及权系数和偏置，提高了学习速度。
 
+
+###Build and run(创建和运行)
+
+>sbt
+> package
+[info] Updating {file:/D:/workplace/scala/ScalaMLT/}root...
+[info] Resolving jline#jline;2.12.1 ...
+[info] Done updating.
+[info] Compiling 3 Scala sources to D:\workplace\scala\ScalaMLT\target\scala-2.11\classes...
+[warn] there was one deprecation warning; re-run with -deprecation for details
+[warn] one warning found
+[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
+[info] Packaging D:\workplace\scala\ScalaMLT\target\scala-2.11\scalamlt_2.11-0.0.1.jar ...
+[info] Done packaging.
+[success] Total time: 29 s, completed 2016-11-10 21:40:15
+> run
+[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
+
+Multiple main classes detected, select one to run:
+
+ [1] scala.ml.supervised.nnet.SMLPDemo
+ [2] scala.ml.supervised.nnet.SMLPInverseDemo
+
+Enter number: 1
+
+[info] Running scala.ml.supervised.nnet.SMLPDemo
+
+
 ##Paper(文献)：
+
 * http://www-isl.stanford.edu/~widrow/papers/c1997nonlinearadaptive.pdf
 * http://mocha-java.uccs.edu/dossier/RESEARCH/1998thesis-.pdf
 * http://cdmd.cnki.com.cn/Article/CDMD-10005-2004082362.htm
 * http://xueshu.baidu.com/s?wd=paperuri%3A%289e7f62257b124a98b73f6cfdf1a86bb2%29&filter=sc_long_sign&tn=SE_xueshusource_2kduw22v&sc_vurl=http%3A%2F%2Fwww.docin.com%2Fp-904291125.html&ie=utf-8&sc_us=18076168798136707397
 * http://xueshu.baidu.com/s?wd=paperuri%3A%289e7f62257b124a98b73f6cfdf1a86bb2%29&filter=sc_long_sign&tn=SE_xueshusource_2kduw22v&sc_vurl=http%3A%2F%2Fd.wanfangdata.com.cn%2FThesis%2FY612820&ie=utf-8&sc_us=18076168798136707397
+
 
