@@ -26,7 +26,7 @@ import breeze.stats.distributions._
 
 object SMLPDemo extends App {
   val rd=Uniform(-1.0,1.0)
-  var net=SMLP( XinNum=20, YfbNum=5, hiddenNum=100, coupleNum=1, coupleInNum=10)
+  var net=SMLP( XinNum=20, YfbNum=5, hiddenNum=100, coupleNum=0, coupleInNum=10)
   net.learningRate=0.5
   net.initW("uniform", -0.01, 0.01, 1.0)
   
@@ -44,21 +44,19 @@ object SMLPDemo extends App {
   var plotD=ListBuffer[Double]()
 
   var desire=0.0
+  var desire1=0.0
   var u=0.0
-  var u1=Queue[Double]()
-  for(x<-0 to 100) u1+=0.0
-  for(x<-0.0 to 20.0 by 0.01){
+  var u1=0.0
+  for(x<-0.0 to 15.0 by 0.01){
     val couple=0.2*math.sin(1.5*x)
+    u1=u
     u=0.25*math.sin(0.5*x)
-    u1+=u
-    if(u1.length>100) u1.dequeue()
-    desire= desire/(1+desire*desire)+u*u*u+couple+0.02*rd.draw()
-    val ux=u1.toArray
-    net.setXin(ux(50))  //ux(100)
-    net.setCoupleIn(Array(couple))
+    desire= desire/(1+desire*desire)+u1*u1*u1+couple+0.02*rd.draw()
+    net.putXin(u1)
+    net.putCoupleIn(Array(couple))
     y=net.forward(desire)
     net.upDateW()
-    if(x>0.01){
+    if(x>10.0){
       plotU.add(u)
       plotX.add(x)
       plotY.add(y)
@@ -69,9 +67,9 @@ object SMLPDemo extends App {
   val f = Figure()
   val p = f.subplot(0)
   //f.visible=false
-  p += plot(plotX, plotY)
-  p += plot(plotX, plotD,'.')
-  p += plot(plotX, plotU,'+')
+  p += plot(plotX, plotY,'.',"b")
+  p += plot(plotX, plotD,'-',"r")
+  p += plot(plotX, plotU,'+',"c")
   p.xlabel = "x axis"
   p.ylabel = "y axis"
   f.saveas("lines.png")

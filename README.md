@@ -2,10 +2,10 @@
 
 This is a NARX adptive inverse modeller and controller implemented by SISO NARX with couple inputs and one MLP network.
 
-»ùÓÚNARXÄ£ĞÍµÄ×ÔÊÊÓ¦½¨Ä£ºÍ¿ØÖÆ£¬ÓÃÒ»¸öMLPÊµÏÖSISO NARX£¬ÄÜ´øñîºÏÊäÈë¡£
+åŸºäºNARXæ¨¡å‹çš„è‡ªé€‚åº”å»ºæ¨¡å’Œæ§åˆ¶ï¼Œç”¨ä¸€ä¸ªMLPå®ç°SISO NARXï¼Œèƒ½å¸¦è€¦åˆè¾“å…¥ã€‚
 
 
-##SMLP definition(SMLP¶¨Òå)
+##SMLP definition(SMLPå®šä¹‰)
 
 ```scala
 case class SMLP(var XinNum:Int=2, var YfbNum:Int=0,var hiddenNum:Int=5, var coupleNum:Int=0, var coupleInNum:Int=0,var MUinNum:Int=0,var MYfbNum:Int=0)
@@ -19,7 +19,7 @@ MYfbNum Int=0, the feedback y(t) order of the NARX model for this inverse NARX C
 ```
 
 
-###Usage(ÓÃ·¨)(in SMLPDemo.scala and SMLPInverseDemo.scala)£º
+###Usage(ç”¨æ³•)(in SMLPDemo.scala and SMLPInverseDemo.scala)ï¼š
 
 ```scala
 import breeze.linalg._
@@ -74,10 +74,10 @@ object SMLPDemo extends App {
 
 * In this project, a sliding mode(VSC) added to ragulate the learning rate and improve the learning speed by tuning the active function's parameters 
 in addition to the weights and bias. 
-* ±¾¹¤³Ì¼ÓÈëÁË»¬Ä£±ä½á¹¹¿ØÖÆµ÷ÕûÑ§Ï°ÂÊ¡£Í¬Ê±µ÷Õû¼¤»îº¯ÊıµÄ²ÎÊıÒÔ¼°È¨ÏµÊıºÍÆ«ÖÃ£¬Ìá¸ßÁËÑ§Ï°ËÙ¶È¡£
+* æœ¬å·¥ç¨‹åŠ å…¥äº†æ»‘æ¨¡å˜ç»“æ„æ§åˆ¶è°ƒæ•´å­¦ä¹ ç‡ã€‚åŒæ—¶è°ƒæ•´æ¿€æ´»å‡½æ•°çš„å‚æ•°ä»¥åŠæƒç³»æ•°å’Œåç½®ï¼Œæé«˜äº†å­¦ä¹ é€Ÿåº¦ã€‚
 
 
-###Build and run(´´½¨ºÍÔËĞĞ)
+###Build and run(åˆ›å»ºå’Œè¿è¡Œ)
 ```bash
 >sbt
 > package
@@ -104,7 +104,7 @@ Enter number: 1
 [info] Running scala.ml.supervised.nnet.SMLPDemo
 ```
 
-##Paper(ÎÄÏ×)£º
+##Paper(æ–‡çŒ®)ï¼š
 
 * http://www-isl.stanford.edu/~widrow/papers/c1997nonlinearadaptive.pdf
 * http://mocha-java.uccs.edu/dossier/RESEARCH/1998thesis-.pdf

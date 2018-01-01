@@ -212,6 +212,15 @@ case class SMLP(var XinNum:Int=2, var YfbNum:Int=0,var hiddenNum:Int=5, var coup
   }
   
 /**
+ *  Set input x(t) to this NARX plant model.
+ * @param x Double=0.0, the input x(t). Default:0.0.
+ */
+  def putXin(x:Double=0.0)={
+    val xVect=Xin.toArray.drop(1)
+    Xin=DenseVector[Double](xVect++Array(x))
+  }
+  
+/**
  *  Set model output y(t) to the Queue for feedback of this NARX plant model.
  * @param y Double=0.0, model output y(t). Default:0.0.
  */
@@ -229,6 +238,15 @@ case class SMLP(var XinNum:Int=2, var YfbNum:Int=0,var hiddenNum:Int=5, var coup
       }
       Yfb:=DenseVector[Double](outQueue.toArray)
     }
+  }
+
+/**
+ *  Set model output y(t) to the Queue for feedback of this NARX plant model.
+ * @param y Double=0.0, model output y(t). Default:0.0.
+ */
+  def putYout(y:Double=0.0)={
+    val yVect=Yfb.toArray.drop(1)
+    Yfb=DenseVector[Double](yVect++Array(y))
   }
   
 /**
@@ -252,6 +270,21 @@ case class SMLP(var XinNum:Int=2, var YfbNum:Int=0,var hiddenNum:Int=5, var coup
       }
     }
   }
+  
+/**
+ *  Set couple input C(t) to this NARX plant model.
+ * @param coupleIn Array[Double], the couple input C(t).
+ */  
+  def putCoupleIn(coupleIn:Array[Double])={
+    if(coupleNum>0){
+      for(i <- 0 until coupleNum){
+        val coupleInput=coupleIn(i)
+        val ins=couple(i).toArray.drop(1)
+        couple(i):=DenseVector[Double](ins++Array(coupleInput))
+      }
+    }
+  }
+  
   
 /**
  *  Set model's hidden layer tuning parameter K, that is sigmoid(K(Wx+b)).
@@ -315,7 +348,8 @@ case class SMLP(var XinNum:Int=2, var YfbNum:Int=0,var hiddenNum:Int=5, var coup
       }
     }
     error=Desire-Yout
-    setYout(Yout)
+    //setYout(Yout)
+    putYout(Yout)
     Yout
   }
   
@@ -436,7 +470,8 @@ case class SMLP(var XinNum:Int=2, var YfbNum:Int=0,var hiddenNum:Int=5, var coup
         derivativeYout=1-Vout*Vout
       }
     }
-    setYout(Yout)
+    //setYout(Yout)
+    putYout(Yout)
     Yout
   }
   
